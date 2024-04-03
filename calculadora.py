@@ -6,6 +6,7 @@ while continuar == "S" or continuar == "s" or continuar == "SIM" or continuar ==
     print("-"*50)
     print("         Qual operação você deseja fazer? ")
     print("-"*50)
+    #Perguntando a operação
     operacao = str(input(" Adição \n Subtração \n Multiplicação \n Divisão \n Potenciação \n Radiciação \n Logaritimação \n "))
     while operacao != "Adição" and operacao != "Subtração" and operacao != "Multiplicação" and operacao != "Divisão" and operacao != "Potenciação" and operacao != "Radiciação" and operacao != "Logaritimação":
         print("-"*100)
@@ -18,7 +19,6 @@ while continuar == "S" or continuar == "s" or continuar == "SIM" or continuar ==
     print("-"*50)
     time.sleep(1)
     lista_numeros = []
-    
     #Separação entre as operações em que o usuario pode dar mais que dois valores
     if operacao == "Potenciação":
         vezes = 2
@@ -30,9 +30,7 @@ while continuar == "S" or continuar == "s" or continuar == "SIM" or continuar ==
         for c in range(1,vezes +1):
             num = int(input(f"Digite o {c}° número: "))
             lista_numeros.append(num)
-    resultado = 0
-    
-    
+    resultado = 0 
     #Calculos 
     if operacao == "Adição":
         for item in lista_numeros:
