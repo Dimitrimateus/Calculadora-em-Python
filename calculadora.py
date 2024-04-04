@@ -20,16 +20,23 @@ while continuar == "S" or continuar == "s" or continuar == "SIM" or continuar ==
     time.sleep(1)
     lista_numeros = []
     #Separação entre as operações em que o usuario pode dar mais que dois valores
-    if operacao == "Potenciação":
-        vezes = 2
-        for c in range(1,vezes +1):
-            num = int(input(f"Digite o {c}° número: "))
-            lista_numeros.append(num)
-    else:
-        vezes = int(input("Com quantos números voce deseja fazer esta operação? "))
-        for c in range(1,vezes +1):
-            num = int(input(f"Digite o {c}° número: "))
-            lista_numeros.append(num)
+    
+    match operacao:
+        case "Potenciação":
+            vezes = 2
+            for c in range(1,vezes +1):
+                num = int(input(f"Digite o {c}° número: "))
+                lista_numeros.append(num)
+        case "Radiciação":
+            num = int(input("Digite o número: "))
+        case "Logaritimação":
+            num = int(input("Digite o número: "))
+            base = int(input("Qual a base? "))
+        case _:
+            vezes = int(input("Com quantos números voce deseja fazer esta operação? "))
+            for c in range(1,vezes +1):
+                num = int(input(f"Digite o {c}° número: "))
+                lista_numeros.append(num)
     resultado = 0 
     #Calculos 
     match operacao: 
@@ -52,27 +59,14 @@ while continuar == "S" or continuar == "s" or continuar == "SIM" or continuar ==
             resultado = lista_numeros[0]
             for item in lista_numeros[1:]:
                 resultado **= item
+        case "Radiciação":
+            resultado = round(math.sqrt(num),3)
+        case "Logaritimação":
+            resultado = math.log(num, base)
+            
     print(f"O resultado é {resultado}")
     time.sleep(1)
     continuar = str(input("Você quer fazer mais alguma operação?"))
     time.sleep(0.25)
 time.sleep(1)
 print("Calculadora fechada!")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
