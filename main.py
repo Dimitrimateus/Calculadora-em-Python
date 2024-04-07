@@ -22,6 +22,10 @@ while continuar == "S" or continuar == "s" or continuar == "SIM" or continuar ==
                 lista_numeros.append(num)
         case "Radiciação":
             num = float(input("Digite o número: "))
+            time.sleep(0.25)
+            while num < 0:
+                print(" |  O número tem que ser no mínimo 0 |")
+                num = float(input("Digite o número: "))
         case "Logaritimação":
                 num = float(input("Digite o número: "))
                 base = float(input("Qual a base? "))        
